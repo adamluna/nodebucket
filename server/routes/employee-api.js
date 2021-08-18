@@ -1,7 +1,11 @@
 /*
-    code attribution goes here
+============================================
+; Title: employee-api.js
+; Author: Adam Luna
+; Date: 16 August 2021
+; Description: Employee API JS file
+;===========================================
 */
-
 //import require statements
 const express = require('express');
 const Employee = require('../models/employee');

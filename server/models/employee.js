@@ -1,5 +1,10 @@
 /*
-  Attribution goes here
+============================================
+; Title: employee.js
+; Author: Adam Luna
+; Date: 16 August 2021
+; Description: Employee Model JS file
+;===========================================
 */
 
 const mongoose = require('mongoose');
