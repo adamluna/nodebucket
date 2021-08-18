@@ -1,0 +1,21 @@
+{
+  "empId": "1010",
+  "firstName": "Robert",
+  "lastName": "Fulton",
+  "todo": [
+    {
+      "taskId": "1",
+      "taskDescription": "Add code attribution to JS files"
+    },
+    {
+      "taskId": "2",
+      "taskDescription": "Add code comments to JS files"
+    }
+  ],
+  "done": [
+    {
+      "taskId": "3",
+      "taskDescription": "Drink coffee"
+    }
+  ]
+}
