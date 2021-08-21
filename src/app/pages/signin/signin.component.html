@@ -1,0 +1,50 @@
+<!--
+============================================
+; Title:  signin.component.html
+; Author: Professor Krasso
+; Modified by: Adam Luna
+; Date: 18 Aug 2021
+; Description: Sign in component HTML file
+;===========================================
+ -->
+<div fxLayout="column">
+  <div fxFlex *ngIf="error">
+    {{ error }}
+  </div>
+
+  <mat-card fxFlex>
+    <mat-card-title>
+      Employee Sign-In Page
+    </mat-card-title>
+
+    <mat-card-subtitle>
+      You must enter a valid employeeId to continue
+    </mat-card-subtitle>
+
+    <!--sign in form-->
+    <form [formGroup]="form" (ngSubmit)="login(); form.reset()">
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            matInput
+            [formControl]="form.controls['empId']"
+            placeholder="Employee ID"
+          />
+        </mat-form-field>
+      </mat-card-content>
+    </form>
+
+    <!--submit button-->
+    <mat-card-actions>
+      <button
+        type="submit"
+        fxFlex
+        mat-raised-button
+        color="primary"
+        [disabled]="!form.valid"
+      >
+        Sign-in
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

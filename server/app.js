@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: app.ja
+; Author: Professor Krasso
+; Modified by: Adam Luna
+; Date: 16 August 2021
+; Description: App JS file
+;===========================================
+*/
+
 /**
  * Require statements
  */
