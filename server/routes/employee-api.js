@@ -13,24 +13,15 @@ const Employee = require('../models/employee');
 //create router object
 const router = express.Router();
 
-/**
- * code comments
- */
+// get employee using empId
 router.get('/:empId', async (req, res) =>
 {
-    /**
-     * code comments
-     */
+    // find one employee using empId 
     try
     {
-        /**
-         * code comments
-         */
         Employee.findOne({'empId': req.params.empId}, function(err, employee)
         {
-            /**
-             * code comments
-             */
+            // log an error and return a 500 error if the employee ID cannot be found
             if(err)
             {
                 console.log(err);
@@ -38,9 +29,7 @@ router.get('/:empId', async (req, res) =>
                     'message': 'MongoDB server error: ' + err.message
                 })
             }
-            /**
-             * code comments
-             */
+            // log the employee object in the console if the employee ID can be found
             else{
                 console.log(employee);
                 res.json(employee);
@@ -48,8 +37,9 @@ router.get('/:empId', async (req, res) =>
         })
     }
     /**
-     * code comments
-     */
+     * catch additional errors and log them to the console
+     * return a 500 error and display a message
+     * */ 
     catch(e)
     {
         console.log(e);

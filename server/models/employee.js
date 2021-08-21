@@ -6,13 +6,11 @@
 ; Description: Employee Model JS file
 ;===========================================
 */
-
+// import statements
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-/**
-*code comments
-*/
+// create employee schema
 let employeeSchema = new Schema({
     empId: { type: String, unique: true },
     firstName: { type: String },

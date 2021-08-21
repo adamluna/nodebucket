@@ -7,6 +7,7 @@
 ; Description: AuthGuard TS file
 ;===========================================
 */
+// import statements
 import { Injectable } from "@angular/core";
 import {
   CanActivate,
@@ -25,7 +26,7 @@ export class AuthGuard implements CanActivate {
   constructor(private router: Router, private cookieService: CookieService) {}
 
   /**
-   * code comments here
+   * Navigate to signin page if user cannot be authenticated
    * @param route
    * @param state
    * @returns
@@ -33,9 +34,9 @@ export class AuthGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const sessionUser = this.cookieService.get("session_user");
     if (sessionUser) {
-      return true; // code comments here
+      return true; // allow user to navigate
     } else {
-      this.router.navigate(["/session/signin"]);
+      this.router.navigate(["/session/signin"]); // route to signin page
       return false;
     }
   }

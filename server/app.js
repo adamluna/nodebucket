@@ -17,7 +17,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');                        
 const path = require('path');
 const mongoose = require('mongoose');
-const EmployeeAPI = require('./routes/employee-api'); //import employee-api file
+const EmployeeAPI = require('./routes/employee-api');
 
 /**
  * App configurations
