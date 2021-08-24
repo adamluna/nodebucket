@@ -6,7 +6,7 @@
 ; Description: Employee API JS file
 ;===========================================
 */
-//import require statements
+//import statements
 const express = require('express');
 const Employee = require('../models/employee');
 
@@ -25,7 +25,7 @@ router.get('/:empId', async (req, res) =>
             if(err)
             {
                 console.log(err);
-                res.status(500).send({
+                res.status(501).send({
                     'message': 'MongoDB server error: ' + err.message
                 })
             }
@@ -48,6 +48,84 @@ router.get('/:empId', async (req, res) =>
         })
     }
 })
+
+/**
+ * findAllTasks API
+ */
+router.get('/:empId/tasks', async(req,res) => {
+    try
+    {
+        Employee.findOne({'empId': req.params.empId}, 'empId todo done', function(err, employee) {
+            if(err)
+            {
+
+               console.log(err);
+               res.status(501).send({
+                   'message': 'MongoDB exception: ' + err.message
+               })
+            }
+            else{
+                console.log(employee);
+                res.json(employee);
+            }
+        })
+    }
+    catch(e)
+    {
+        console.log(e);
+        res.status(500).send({
+            'message': 'Internal server error: ' + e.message
+        })
+    }
+})
+
+/**
+ * createTask API
+ */
+router.post('/:empId/tasks', async(req, res) => {
+    try
+    {
+        Employee.findOne({'empId': req.params.empId}, function(err, employee) {
+            if(err)
+            {
+                console.log(err);
+                res.status(500).send({
+                    'message': 'MongoDB Exception: ' + err.message
+                })
+            }
+            else{
+                console.log(employee);
+
+                const newTask = {
+                    text: req.body.text
+                };
+                employee.todo.push(newTask);
+                employee.save(function(err, updatedEmployee){
+                    if(err)
+                    {
+                        console.log(err);
+                        res.status(501).send ({
+                            'message': 'MongoDB Exception: ' + err.message
+                        })
+                    }
+                    else
+                    {
+                        console.log(updatedEmployee);
+                        res.json(updatedEmployee);
+                    }
+                })
+            }
+        })
+    }
+    catch(e)
+    {
+        console.log(e);
+        res.status(500).send({
+            'message': 'Internal server error:p ' + e.message
+        })
+    }
+})
+
 
 //export router
 module.exports = router;
