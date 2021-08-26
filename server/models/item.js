@@ -13,9 +13,9 @@ const Schema = mongoose.Schema;
 
 
 // create and define itemSchema
-let itemSchema = new Schema({
+const itemSchema = new mongoose.Schema({
     text: { type: String }
-});
+  });
 
 // export itemSchema
-module.exports = itemSchema
+module.exports = itemSchema;
