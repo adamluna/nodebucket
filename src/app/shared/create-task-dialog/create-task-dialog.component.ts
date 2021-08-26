@@ -1,3 +1,12 @@
+/*
+============================================
+; Title: create-task-dialog.component.ts
+; Author: Professor Krasso
+; Modified by: Adam Luna
+; Date: 25 August 2021
+; Description: Create task dialog component TS file
+;===========================================
+*/
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';

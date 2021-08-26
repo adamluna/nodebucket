@@ -12,9 +12,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-/**
- * create and define itemSchema
- */
+// create and define itemSchema
 let itemSchema = new Schema({
     text: { type: String }
 });

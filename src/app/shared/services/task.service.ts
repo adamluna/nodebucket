@@ -1,5 +1,11 @@
-/**
- * code attribution
+/*
+============================================
+; Title: task.service.ts
+; Author: Professor Krasso
+; Modified by: Adam Luna
+; Date: 28 August 2021
+; Description: Task service TS file
+;===========================================
 */
 // import statements
 import { HttpClient } from '@angular/common/http';
@@ -23,10 +29,10 @@ export class TaskService {
   }
 
   /**
-   * 
-   * @param empId code comments
+   * Create task 
+   * @param empId
    * @param task 
-   * @returns 
+   * @returns task information
    */
   createTask(empId: number, task: string): Observable<any> {
     return this.http.post('/api/employees/' + empId + '/tasks', {
