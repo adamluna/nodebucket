@@ -1,0 +1,22 @@
+/*
+============================================
+; Title:  contact.component.css
+; Author: Adam Luna
+; Date: 29 June 2021
+; Description: Contact component CSS file
+;===========================================
+*/
+
+.mat-card-title {
+    text-align: center;
+}
+
+.icons {
+    text-align: center;
+    margin-top: 5em;
+    color: #67AB9F;
+}
+
+.mat-card-content {
+    text-align: center;
+}
