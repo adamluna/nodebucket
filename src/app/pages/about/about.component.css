@@ -1,0 +1,15 @@
+/*
+============================================
+; Title:  about.component.css
+; Author: Adam Luna
+; Date: 01 September 2021
+; Description: About component CSS file
+;===========================================
+*/
+h1 {
+    text-align: center;
+    font-size: 2em;
+    padding-top: 2em;
+    color: #67AB9F;
+    font-weight: normal;
+}

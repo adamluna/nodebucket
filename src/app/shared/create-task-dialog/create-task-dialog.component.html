@@ -7,13 +7,13 @@
 ; Description: Create task dialog component HTML file
 ;===========================================
  -->
-<h2 mat-dialog-title>Add new task item</h2>
+<h2 mat-dialog-title>Add a new task</h2>
 
 <mat-dialog-content [formGroup]="taskForm">
   <mat-form-field style="width: 200px">
     <input
       type="text"
-      placeholder="Enter a task name..."
+      placeholder="Enter task description"
       matInput
       formControlName="text"
       (keydown.enter)="createTask()"
@@ -24,6 +24,6 @@
 <mat-dialog-actions algin="end">
   <button mat-button (click)="cancel()">Cancel</button>
   <button mat-button [disabled]="!taskForm.valid" (click)="createTask()">
-    Create Task
+    Create
   </button>
 </mat-dialog-actions>

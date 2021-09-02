@@ -16,6 +16,11 @@ import { Employee } from "../../shared/models/employee.interface";
 import { Item } from "../../shared/models/item.interface";
 import { CookieService } from "ngx-cookie-service";
 import { MatDialog } from "@angular/material/dialog";
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: "app-home",
@@ -105,5 +110,82 @@ export class HomeComponent implements OnInit {
         );
       }
     });
+  }
+
+  /**
+   * move tasks in ToDo column to Done column using drag and drop functionality
+   * @param event
+   */
+  drop(event: CdkDragDrop<any[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+
+      console.log("Reordered the existing list of task items."); // log message to console when tasks are reordered
+
+      this.updateTaskList(this.empId, this.todo, this.done);
+    } else {
+      // transferring items in the two arrays
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+
+      console.log("Moved task item into the other container."); // log message to console when tasks are moved into the other container
+
+      this.updateTaskList(this.empId, this.todo, this.done);
+    }
+  }
+
+  /**
+   * Calls deleteTask API to delete tasks when user chooses to delete a task
+   * @param taskId
+   */
+  deleteTask(taskId: string): void {
+    // User is prompted to choose if they are sure they want to delete a task
+    if (confirm("Are you sure you want to delete this task?")) {
+      if (taskId) {
+        console.log(`Task item: ${taskId} was deleted`);
+
+        this.taskService.deleteTask(this.empId, taskId).subscribe(
+          (res) => {
+            this.employee = res.data;
+          },
+          (err) => {
+            console.log(err);
+          },
+          () => {
+            this.todo = this.employee.todo;
+            this.done = this.employee.done;
+          }
+        );
+      }
+    }
+  }
+
+  /**
+   * Calls updateTask API to update employee collection when tasks are dragged and dropped between the two columns
+   * @param empId
+   * @param todo
+   * @param done
+   */
+  private updateTaskList(empId: number, todo: Item[], done: Item[]): void {
+    this.taskService.updateTask(this.empId, this.todo, this.done).subscribe(
+      (res) => {
+        this.employee = res.data;
+      },
+      (err) => {
+        console.log(err);
+      },
+      () => {
+        this.todo = this.employee.todo;
+        this.done = this.employee.done;
+      }
+    );
   }
 }

@@ -2,31 +2,39 @@
 ============================================
 ; Title:  contact.component.html
 ; Author: Adam Luna
-; Date: 29 June 2021
+; Date: 29 July 2021
 ; Description: Contact component HTML file
 ;===========================================
 -->
+<br/>
+<!-- Page Title -->
+<h1>Contact Us</h1>
+<br /><br/>
 
-<div fxLayout>
-    <div fxFlex>
+<div fxLayout="row" fxLayoutAlign="center" class="">
+    <div fxFlex="50%">
       <!-- Header Icon -->
       <mat-card-title>
-        <mat-icon class="icons" color="primary">navigation</mat-icon>
+        <mat-icon class="icons">mail_outline</mat-icon>
       </mat-card-title>
+      <br />
       <mat-card-content>
+        <p>Nodebucket, LLC.</p>
         <p>100 Nodebucket St.</p>
         <p>San Antonio, TX 78217</p>
       </mat-card-content>
     </div>
-    <div fxFlex>
+
+    <div fxFlex="50%">
       <!-- Header Icon -->
-      <mat-card-title class="card-title-icon">
-          <mat-icon class="icons" color="primary">phone</mat-icon>
+      <mat-card-title>
+          <mat-icon class="icons">phone</mat-icon>
       </mat-card-title>
       <br />
       <mat-card-content>
         <p>Direct: 123-456-7890</p>
         <p>Toll-free: 1-800-987-6543</p>
+        <p>Email: contact@nodebucket.test</p>
       </mat-card-content>
     </div>
   </div>
