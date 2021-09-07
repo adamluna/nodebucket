@@ -6,10 +6,49 @@
 ; Description: About component CSS file
 ;===========================================
 */
-h1 {
+
+mat-card-title {
     text-align: center;
+    padding-top: 1em;
     font-size: 2em;
-    padding-top: 2em;
     color: #67AB9F;
     font-weight: normal;
+}
+
+p {
+    text-align: center;
+    color: #B3B3B3;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+mat-card-content {
+    text-align: center;
+}
+
+mat-card {
+    padding-bottom: 1em;
+}
+
+h2 {
+    color: #67AB9F;
+    font-weight: normal;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h3 {
+    color: #B3B3B3;
+    font-size: 1em;
+    font-weight: normal;
+    text-align: center;
+}
+
+img {
+    width: 30%;
+    height: 25%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
 }

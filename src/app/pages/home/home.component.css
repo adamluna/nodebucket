@@ -1,15 +1,27 @@
+/*
+============================================
+; Title:  home.component.css
+; Author: Adam Luna
+; Date: 06 September 2021
+; Description: Home component CSS file
+;===========================================
+*/
+
 .main-welcome {
     margin-top: 30px;
   }
   
   .title {
     text-align: center;
+    font-size: 2em;
+    padding-top: 1em;
     font-weight: lighter;
+    color: #B3B3B3;
   }
   
   .subtitle {
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
   }
   
   .task-container {

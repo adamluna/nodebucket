@@ -197,7 +197,7 @@ router.delete('/:empId/tasks/:taskId', async(req,res) => {
               res.status(501).send(deleteTodoItemMongoErrorResponse.toObject());
             } else {
               console.log(updatedTodoItemEmployee);
-              const deleteTodoItemSuccessResponse = new BaseResponse('200', 'Item removed from the todo array', updatedTodoItemEmployee);
+              const deleteTodoItemSuccessResponse = new BaseResponse('200', 'Item removed from the ToDo array', updatedTodoItemEmployee);
               res.status(200).send(deleteTodoItemSuccessResponse.toObject());
             }
           })

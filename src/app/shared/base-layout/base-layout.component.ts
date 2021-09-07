@@ -7,6 +7,7 @@
  ; Description: base layout component TS file
  ================================== 
 */
+// import statements
 import { Component, OnInit } from "@angular/core";
 import { CookieService } from "ngx-cookie-service";
 import { Router } from "@angular/router";
@@ -21,6 +22,7 @@ export class BaseLayoutComponent implements OnInit {
   isLoggedIn: boolean;
   name: string;
 
+  // get name of logged in user and log message to console
   constructor(private cookieService: CookieService, private router: Router) {
     this.isLoggedIn = this.cookieService.get("session_user") ? true : false;
 

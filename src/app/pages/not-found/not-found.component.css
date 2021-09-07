@@ -1,0 +1,41 @@
+/*
+============================================
+; Title:  not-found.component.css
+; Author: Adam Luna
+; Date: 06 September 2021
+; Description: Not-found component CSS file
+;===========================================
+*/
+
+img {
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+span {
+    text-align: center;
+    align-items: center;
+    color: #B3B3B3;
+}
+
+h1 {
+    padding-top: 1em;
+    text-align: center;
+    color: #B3B3B3;
+    font-size: 2em;
+}
+
+h2 {
+    text-align: center;
+    color: #B3B3B3;
+    font-size: 1.5em;
+}
+
+a:hover {
+    color: #67AB9F;
+}
+
+a:active {
+    color: #67AB9F;
+}

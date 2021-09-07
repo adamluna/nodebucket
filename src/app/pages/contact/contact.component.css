@@ -10,9 +10,16 @@
 h1 {
     text-align: center;
     font-size: 2em;
-    padding-top: 2em;
+    padding-top: 1em;
     color: #67AB9F;
-    font-weight: normal;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    color: #B3B3B3;
+    font-weight: lighter;
+
 }
 
 .mat-card-title {
@@ -21,15 +28,14 @@ h1 {
 
 .icons {
     display: inline-flex;
-    vertical-align: middle;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    padding-right: .75em;
     color: #67AB9F;
     font-size: 3em;
 }
 
 .mat-card-content {
     text-align: center;
-    font-size: 1em;
-    font-weight: normal;
+    font-size: 1.5em;
+    font-weight: lighter;
+    color: #B3B3B3;
 }
